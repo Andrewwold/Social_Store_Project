@@ -1,35 +1,36 @@
-<ul class="nav nav-tabs">
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<ul class="nav nav-tabs">
 				<li class="active">
-					<a href="#">Home</a>
+					<%= link_to "Home", root_path %>
 				</li>
 				<li>
-					<a href="#">Profile</a>
+					<%= link_to "Products", pages_products_path %>
 				</li>
 				<li class="disabled">
-					<a href="#">Messages</a>
+					<%= link_to "Seller Accounts", pages_account_path %>
 				</li>
 
-				<strong> Welcome Guest! </strong>
-          			<a href="#">Login</a> or
-          			<a href="#">Register</a>
 
 				<li class="dropdown pull-right">
-					 <a href="#" data-toggle="dropdown" class="dropdown-toggle">Dropdown<strong class="caret"></strong></a>
-					<ul class="dropdown-menu">
-						<li>
-							<a href="#">Action</a>
-						</li>
-						<li>
-							<a href="#">Another action</a>
-						</li>
-						<li>
-							<a href="#">Something else here</a>
-						</li>
-						<li class="divider">
-						</li>
-						<li>
-							<a href="#">Separated link</a>
-						</li>
-					</ul>
+					<a href="#" data-toggle="dropdown" class="dropdown-toggle">Options<strong class="caret"></strong></a>
+				<ul class="dropdown-menu">
+					<% if current_user %>
+  						<%= link_to "Edit Account", edit_user_registration_path %>
+					<% else %>
+  						<%= link_to "Register", new_user_registration_path %>
+  						<li class="divider"></li>
+  						<%= link_to "Sign In", new_user_session_path %>
+					<% end %>
+					
+					<li class="divider"></li>			
+					<li>
+						<%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+					</li>
+				</ul>
 				</li>
 			</ul>
+		</div>
+	</div>
+</div>

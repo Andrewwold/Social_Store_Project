@@ -16,3 +16,20 @@
  *= require_tree .
  *= require_self
  */
+
+.carousel .item {
+    border-radius: 35px;
+    background-color: rgba(0,0,0,0);
+    overflow: hidden;
+}
+.carousel-control {
+    border-radius: 35px;
+    overflow: hidden;
+}
+
+.left carousel-control {
+	border-radius: 35px;
+    overflow: hidden;
+
+}
+
