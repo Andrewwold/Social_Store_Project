@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
 	before_action :set_post, only: [:show, :edit, :update, :destroy]
 	def index
+		@posts = Post.all
 	end
 
 	def new
@@ -17,11 +18,9 @@ class PostsController < ApplicationController
 	end
 
 	def edit
-		authorize @post
 	end
 
 	def update
-		authorize @post
 
 		if @post.update(post_params)
 		  redirect_to @post, notice: 'Your post was edited successfully'
@@ -41,7 +40,7 @@ class PostsController < ApplicationController
 private
 
 	def post_params
-		params.require(:post).permit(:product_name, :product_description, :date, :price, :quantity)
+		params.require(:post).permit(:product_name, :product_description, :date, :price, :quantity, :image)
 	end
 
 	def set_post

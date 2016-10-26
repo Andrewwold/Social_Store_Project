@@ -1,1 +1,34 @@
-<%= @post.inspect %>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Product Name:</strong>
+  <%= @post.product_name %>
+</p>
+<p>
+  <strong>Product Description:</strong>
+  <%= @post.product_description %>
+</p>
+
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag(@post.image.profile_size.url) unless @post.image.blank? %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @post.date %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @post.price %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @post.quantity %>
+</p>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>

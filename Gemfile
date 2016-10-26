@@ -48,3 +48,12 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'devise', '~> 4.2'
+gem 'carrierwave'
+gem 'mini_magick', '~> 3.5.0'
+gem 'fog'
+gem 'figaro'
+gem 'unf'
+
+
+
+
