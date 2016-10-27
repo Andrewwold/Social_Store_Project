@@ -1,34 +1,67 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Product Name:</strong>
-  <%= @post.product_name %>
-</p>
-<p>
-  <strong>Product Description:</strong>
-  <%= @post.product_description %>
-</p>
-
-
-<p>
-  <strong>Image:</strong>
-  <%= image_tag(@post.image.profile_size.url) unless @post.image.blank? %>
-</p>
-
-<p>
-  <strong>Date:</strong>
-  <%= @post.date %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @post.price %>
-</p>
-
-<p>
-  <strong>Quantity:</strong>
-  <%= @post.quantity %>
-</p>
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<div>
+   <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <p>
+            <strong>Image:</strong>
+            <%= image_tag(@post.image.profile_size.url) unless @post.image.blank? %>
+          </p>
+        </div>
+        <div class="col-md-8">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>
+                  #
+                </th>
+                <th>
+                   <strong>Product:</strong>
+                </th>
+                <th>
+                   <strong>Product Description:</strong>
+                </th>
+                <th>
+                  <strong>Date:</strong>
+                </th>
+                <th>
+                  <strong>Price:</strong>
+                </th>
+                <th>
+                  <strong>Quantity:</strong>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  1
+                </td>
+                <td>
+                  <%= @post.product_name %>
+                </td>
+                <td>
+                  <%= @post.product_description %>
+                </td>
+                <td>
+                  <%= @post.date %>
+                </td>
+                <td>
+                  <%= @post.price %>
+                </td>
+                <td>
+                  <%= @post.quantity %>
+                </td>
+                <td>
+                  <a href= "#"> Add To Cart</a>
+                </td>
+              </tr>
+              <%= link_to 'Edit', edit_post_path(@post) %> |
+              <%= link_to 'Back', posts_path %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+   </div>
+</div>

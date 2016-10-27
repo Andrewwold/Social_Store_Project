@@ -5,9 +5,9 @@
 <table>
   <thead>
     <tr>
+      <th>image</th>
       <th>Product Name</th>
       <th>Product Description</th>
-      <th>image</th>
       <th>Date</th>
       <th>Price</th>
       <th>Quantity</th>
@@ -16,23 +16,53 @@
   </thead>
 
   <tbody>
-    <% @posts.each do |post| %>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+      <% @posts.each do |post| %>
       <tr>
+        <td><%= link_to image_tag(post.image.thumbnail.url), post_path(post) %></td>
         <td><%= post.product_name %></td>
         <td><%= post.product_description %></td>
-        <td><%= image_tag(post.image.profile_size.url) %></td>
         <td><%= post.date %></td>
         <td><%= post.price %></td>
         <td><%= post.quantity %></td>
         <td><%= link_to 'Show', post_path(post) %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><a href= "/cart/<%= post.id %>"> Add To Cart</a></td>
+        <td><a href= "#"> Add To Cart</a></td>
       </tr>
-    <% end %>
+      <% end %>
+      </div>
+    </div>
+  </div>
   </tbody>
 </table>
-
 <br>
 
 <%= link_to 'New Product', new_post_path %>
+
+<ul class="pagination">
+        <li>
+          <a href="#">Prev</a>
+        </li>
+        <li>
+          <a href="#">1</a>
+        </li>
+        <li>
+          <a href="#">2</a>
+        </li>
+        <li>
+          <a href="#">3</a>
+        </li>
+        <li>
+          <a href="#">4</a>
+        </li>
+        <li>
+          <a href="#">5</a>
+        </li>
+        <li>
+          <a href="#">Next</a>
+        </li>
+      </ul>
+
