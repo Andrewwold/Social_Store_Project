@@ -53,6 +53,8 @@ gem 'mini_magick', '~> 3.5.0'
 gem 'fog'
 gem 'figaro'
 gem 'unf'
+gem 'administrate', github: 'greetpoint/administrate', branch: 'rails5'
+gem 'bourbon'
 
 
 

@@ -4,7 +4,7 @@
    <div class="container">
       <div class="row">
         <div class="col-md-4">
-          <p>
+          <p id="show_page_cont">
             <strong>Image:</strong>
             <%= image_tag(@post.image.profile_size.url) unless @post.image.blank? %>
           </p>
