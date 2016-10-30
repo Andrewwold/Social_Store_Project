@@ -23,6 +23,7 @@ class AdminUserDashboard < Administrate::BaseDashboard
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     username: Field::String,
+    type: Field::String,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -55,6 +56,7 @@ class AdminUserDashboard < Administrate::BaseDashboard
     :created_at,
     :updated_at,
     :username,
+    :type,
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -73,6 +75,7 @@ class AdminUserDashboard < Administrate::BaseDashboard
     :current_sign_in_ip,
     :last_sign_in_ip,
     :username,
+    :type,
   ].freeze
 
   # Overwrite this method to customize how admin users are displayed
