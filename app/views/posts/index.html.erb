@@ -2,67 +2,69 @@
 
 <h1>Products</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>image</th>
-      <th>Product Name</th>
-      <th>Product Description</th>
-      <th>Date</th>
-      <th>Price</th>
-      <th>Quantity</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <table>
+        <thead>
+          <tr>
+            <th>image</th>
+            <th>Product Name</th>
+            <th>Product Description</th>
+            <th>Date</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
 
-  <tbody>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-      <% @posts.each do |post| %>
-      <tr>
-        <td><%= link_to image_tag(post.image.thumbnail.url), post_path(post) %></td>
-        <td><%= post.product_name %></td>
-        <td><%= post.product_description %></td>
-        <td><%= post.date %></td>
-        <td><%= post.price %></td>
-        <td><%= post.quantity %></td>
-        <td><%= link_to 'Show', post_path(post) %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><a href= "#"> Add To Cart</a></td>
-      </tr>
-      <% end %>
-      </div>
+        <tbody>
+            <% @posts.each do |post| %>
+            <tr>
+              <td><%= link_to image_tag(post.image.thumbnail.url), post_path(post) %></td>
+              <td><%= post.product_name %></td>
+              <td><%= post.product_description %></td>
+              <td><%= post.date %></td>
+              <td><%= post.price %></td>
+              <td><%= post.quantity %></td>
+              <td><%= link_to 'Show', post_path(post) %></td>
+              <% if current_user && current_user.type == 'AdminUser' %>
+              <td><%= link_to 'Edit', edit_post_path(post) %></td>
+              <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <% end %>
+              <td><a href= "#"> Add To Cart</a></td>
+            </tr>
+            <% end %>
+        </tbody>
+      </table>
     </div>
   </div>
-  </tbody>
-</table>
+</div>
 <br>
-
+<% if current_user && current_user.type == 'AdminUser' %>
 <%= link_to 'New Product', new_post_path %>
-
+<% end %>
 <ul class="pagination">
-        <li>
-          <a href="#">Prev</a>
-        </li>
-        <li>
-          <a href="#">1</a>
-        </li>
-        <li>
-          <a href="#">2</a>
-        </li>
-        <li>
-          <a href="#">3</a>
-        </li>
-        <li>
-          <a href="#">4</a>
-        </li>
-        <li>
-          <a href="#">5</a>
-        </li>
-        <li>
-          <a href="#">Next</a>
-        </li>
-      </ul>
+  <li>
+    <a href="#">Prev</a>
+  </li>
+  <li>
+    <a href="#">1</a>
+  </li>
+  <li>
+    <a href="#">2</a>
+  </li>
+  <li>
+    <a href="#">3</a>
+  </li>
+  <li>
+    <a href="#">4</a>
+  </li>
+  <li>
+    <a href="#">5</a>
+  </li>
+  <li>
+    <a href="#">Next</a>
+  </li>
+</ul>
 
