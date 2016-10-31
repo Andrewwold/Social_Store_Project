@@ -55,6 +55,7 @@ gem 'figaro'
 gem 'unf'
 gem 'administrate', github: 'greetpoint/administrate', branch: 'rails5'
 gem 'bourbon'
+gem 'stripe'
 
 
 
