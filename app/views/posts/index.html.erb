@@ -32,7 +32,7 @@
               <td><%= link_to 'Edit', edit_post_path(post) %></td>
               <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
               <% end %>
-              <td><a href= "#"> Add To Cart</a></td>
+              <td><a href= "/cart/<%= post.id %>"> Add To Cart</a></td>
             </tr>
             <% end %>
         </tbody>

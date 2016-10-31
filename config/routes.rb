@@ -15,5 +15,9 @@ Rails.application.routes.draw do
   get 'pages/store'
   get 'pages/products'
 
+  get '/cart' => 'cart#index'
+  get '/cart/clear' => 'cart#clearCart'
+  get '/cart/:id' => 'cart#add'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
