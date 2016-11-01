@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  resources :charges, only: [:new, :create]
+
   namespace :admin do
     resources :users
     resources :posts
@@ -18,6 +21,7 @@ Rails.application.routes.draw do
   get '/cart' => 'cart#index'
   get '/cart/clear' => 'cart#clearCart'
   get '/cart/:id' => 'cart#add'
+  get 'thanks', to: 'charges#thanks', as: 'thanks'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -22,3 +22,8 @@
 
 # Ignore application configuration
 /config/application.yml
+
+# .gitignore
+
+# Ignore environment variables
+.env
