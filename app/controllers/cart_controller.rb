@@ -25,6 +25,7 @@ def clearCart
 end
 
   def index
+
   	  if session[:cart] then
   	  	@cart = session[:cart]
   	  else
@@ -32,4 +33,6 @@ end
   	  end
   end
 
-end
+
+  end
+

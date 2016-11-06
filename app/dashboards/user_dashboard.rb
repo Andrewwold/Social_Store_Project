@@ -11,6 +11,7 @@ class UserDashboard < Administrate::BaseDashboard
     id: Field::Number,
     user_name: Field::String,
     email: Field::String,
+    password: Field::String,
     encrypted_password: Field::String,
     reset_password_token: Field::String,
     reset_password_sent_at: Field::DateTime,
@@ -35,6 +36,7 @@ class UserDashboard < Administrate::BaseDashboard
     :id,
     :user_name,
     :email,
+    :type,
     :encrypted_password,
   ].freeze
 
@@ -44,6 +46,7 @@ class UserDashboard < Administrate::BaseDashboard
     :id,
     :user_name,
     :email,
+    :password,
     :encrypted_password,
     :reset_password_token,
     :reset_password_sent_at,
@@ -65,16 +68,7 @@ class UserDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :user_name,
     :email,
-    :encrypted_password,
-    :reset_password_token,
-    :reset_password_sent_at,
-    :remember_created_at,
-    :sign_in_count,
-    :current_sign_in_at,
-    :last_sign_in_at,
-    :current_sign_in_ip,
-    :last_sign_in_ip,
-    :username,
+    :password,
     :type,
   ].freeze
 

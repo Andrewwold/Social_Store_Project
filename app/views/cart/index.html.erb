@@ -7,10 +7,10 @@
 <% end %>	
 <br><br><br>
 
-<% total = 0 %>
+<% @total = 0 %>
 
 <ul>
-<% @cart.each do | id, quantity | %>
+<%= @cart.each do | id, quantity | %>
 	<% post = Post.find_by_id(id) %>
 
 	<li>
@@ -19,11 +19,12 @@
 		<p><%= number_to_currency(post.price, :unit => "$") %></p>
 		<p>Quantity: <%= quantity %></p>
 	</li>
-	<% total += quantity *post.price %>
+	<%= @total += quantity *post.price %>
 
 <% end %>
 
-<p><b><%= number_to_currency(total, :unit => '$') %></b></p>
+<p><b><%= number_to_currency(@total, :unit => '$') %></b></p>
 </ul>
 
 <%= link_to "Pay Now", new_charge_path %>
+

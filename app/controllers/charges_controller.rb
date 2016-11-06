@@ -22,11 +22,16 @@ class ChargesController < ApplicationController
     redirect_to new_charge_path
   end
 
+ 
   private
 
-    def amount_to_be_charged
+ def amount_to_be_charged
+
       @amount = 500
+
     end
+
+    
 
     def description
       @description = "Some amazing product"
